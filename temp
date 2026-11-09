@@ -1,0 +1,138 @@
+#include <iostream>
+
+using namespace std;
+
+class Movie {	
+	int movieId,
+		duration,
+		price,
+		ageRating;
+	string title,
+		   releaseDate,
+		   genre,
+		   language,
+		   description;
+public:
+	Movie(int movieId, int duration, string releaseDate, int price, int ageRating, string title, string genre, string language) {
+		this->movieId = movieId;
+		this->duration = duration;
+		this->releaseDate = releaseDate;
+		this->price = price;
+		this->ageRating = ageRating;
+		this->title = title;
+		this->genre = genre;
+		this->language = language;
+	}
+	void setDescription(string description) {
+
+		this->description = description;
+	}
+	int getId() {
+		return movieId;
+	}
+	int getDuration() {
+		return duration;
+	}
+	int getPrice() {
+		return price;
+	}
+	int getAgeRating() {
+		return ageRating;
+	}
+	string getTitle() {
+		return title;
+	}
+	string getReleaseDate() {
+		return releaseDate;
+	}
+	string getGenre() {
+		return genre;
+	}
+	string getLanguage() {
+		return language;
+	}
+	string getDescription() {
+		return description;
+	}
+	
+};
+
+class MovieHall {
+	int hallId,
+		capacity;
+	string name;
+	Movie* movie;
+public:
+	MovieHall(int hallId, int capacity, string name, Movie* movie) {
+		this->hallId = hallId;
+		this->capacity = capacity;
+		this->name = name;
+		this->movie = movie;
+	}
+	int getHallId() {
+		return hallId;
+	}
+	int getCapacity() {
+		return capacity;
+	}
+	string getName() {
+		return name;
+	}
+	Movie* getMovie() {
+		return movie;
+	}
+};
+class Seat {
+	int seatId;
+	bool isAvailable;
+public:
+	Seat(int seatId, bool isAvailable) {
+		this->seatId = seatId;
+		this->isAvailable = isAvailable;
+	}
+	int getSeatId() {
+		return seatId;
+	}
+	bool getIsAvailable() {
+		return isAvailable;
+	}
+};
+class Ticket {
+	int ticketId;
+	Seat* seat;
+	MovieHall* movieHall;
+public:
+	Ticket(int ticketId, Seat* seat, MovieHall* movieHall) {
+		this->ticketId = ticketId;
+		this->seat = seat;
+		this->movieHall = movieHall;
+	}
+	int getTicketId() {
+		return ticketId;
+	}
+	Seat* getSeat() {
+		return seat;
+	}
+	MovieHall* getMovieHall() {
+		return movieHall;
+	}
+};
+
+
+int main()
+{
+	
+
+    
+}
+
+// Run program: Ctrl + F5 or Debug > Start Without Debugging menu
+// Debug program: F5 or Debug > Start Debugging menu
+
+// Tips for Getting Started: 
+//   1. Use the Solution Explorer window to add/manage files
+//   2. Use the Team Explorer window to connect to source control
+//   3. Use the Output window to see build output and other messages
+//   4. Use the Error List window to view errors
+//   5. Go to Project > Add New Item to create new code files, or Project > Add Existing Item to add existing code files to the project
+//   6. In the future, to open this project again, go to File > Open > Project and select the .sln file
